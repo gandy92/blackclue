@@ -1,0 +1,15 @@
+*.pyc
+.coverage
+docs/html
+.idea
+build
+dist
+/.tox
+*.egg
+*.egg-info
+cover
+.eggs
+cover/
+docs/_*/
+*.log
+tmp/
