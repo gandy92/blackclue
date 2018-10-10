@@ -1,11 +1,18 @@
 # BlackClue
-A Python Tool to extract GPS and Acceleration data from BlackVue MP4 recordings.
+A Python tool to extract GPS and Acceleration data from BlackVue MP4 recordings. 
+It can also be used as a package.
 
 # License
 BlackClue is licensed unter the [Apache 2.0 License](LICENSE). 
 
-# Usage
+# Installation
+While not available via PyPI, blackvue can be installed manually:
+```bash
+$ git clone https://github.com/gandy92/blackclue.git
+$ sudo python3 -m pip install -e .
+```
 
+# Usage
 `blackclue` is based on the excellent [pymp4](https://github.com/beardypig/pymp4).
 It was developed and tested with a BlackVue DR750S-1CH but should work with other 
 models of that brand.
@@ -29,3 +36,6 @@ Options:
 ```
 
 Leave bug reports and feature requests on https://github.com/gandy92/blackclue.
+
+# Todo
+Make it available on [PyPI](https://pypi.org/) to be installed via pip.
