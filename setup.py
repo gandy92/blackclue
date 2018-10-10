@@ -22,6 +22,7 @@ from sys import path as sys_path
 deps = [
     "pymp4",
     "click",
+    "clickutil",
     "construct",
 ]
 
