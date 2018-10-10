@@ -1,13 +1,15 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 from __future__ import print_function
+
 import io
 import logging
-import click
 import os
 
-from pymp4.parser import Box
+import click
+import clickutil
 import construct
+from pymp4.parser import Box
 
 log = logging.getLogger(__name__)
 construct.setglobalfullprinting(True)
@@ -23,16 +25,6 @@ emb_file_def = {
 }
 
 
-@click.command(context_settings=dict(help_option_names=['-h', '--help']))
-@click.option('-c', '--dump-embedded', is_flag=True,
-              help='Dump complete embedded data.')
-@click.option('-r', '--dump-raw-blocks', is_flag=True,
-              help='Dump raw blocks from embedded data.')
-@click.option('-x', '--extended-scan', is_flag=True,
-              help='Do not stop scanning file after processing the embedded data.')
-@click.option('-v', '--verbose', is_flag=True,
-              help='Print some additional information.')
-@click.argument('FILE', nargs=-1, metavar='filelist')
 def dump(file, dump_embedded, dump_raw_blocks, extended_scan, verbose):
     """ Extract GPS and Acceleration data from BlackVue MP4 recordings.
 
@@ -121,4 +113,17 @@ def dump(file, dump_embedded, dump_raw_blocks, extended_scan, verbose):
 
 
 if __name__ == '__main__':
-    dump()
+    @click.command(context_settings=dict(help_option_names=['-h', '--help']))
+    @click.option('-c', '--dump-embedded', is_flag=True,
+                  help='Dump complete embedded data.')
+    @click.option('-r', '--dump-raw-blocks', is_flag=True,
+                  help='Dump raw blocks from embedded data.')
+    @click.option('-x', '--extended-scan', is_flag=True,
+                  help='Do not stop scanning file after processing the embedded data.')
+    @click.option('-v', '--verbose', is_flag=True,
+                  help='Print some additional information.')
+    @click.argument('FILE', nargs=-1, metavar='filelist')
+    @clickutil.call(dump)
+    def _dump():
+        pass
+    _dump()
