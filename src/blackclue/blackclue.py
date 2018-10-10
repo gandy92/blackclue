@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 from __future__ import print_function
+
 import io
 import logging
-import click
 import os
 
+import click
 import clickutil
-from pymp4.parser import Box
 import construct
+from pymp4.parser import Box
 
 log = logging.getLogger(__name__)
 construct.setglobalfullprinting(True)
