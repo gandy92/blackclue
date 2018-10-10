@@ -20,9 +20,7 @@ from setuptools import setup, find_packages
 from sys import path as sys_path
 
 deps = [
-    "pymp4",
-    "click",
-    "clickutil",
+    "pymp4", "click", "clickutil"
 ]
 
 srcdir = join(dirname(abspath(__file__)), "src/")
