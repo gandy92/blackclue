@@ -20,7 +20,10 @@ from setuptools import setup, find_packages
 from sys import path as sys_path
 
 deps = [
-    "pymp4", "click", "clickutil"
+    "pymp4",
+    "click",
+    "clickutil",
+    "construct",
 ]
 
 srcdir = join(dirname(abspath(__file__)), "src/")
@@ -33,10 +36,10 @@ setup(name="blackclue",
       author="gandy92",
       author_email="gandy92@users.noreply.github.com",
       license="Apache 2.0",
-      packages=find_packages("src"),
-      package_dir={"": "src"},
+      packages=find_packages("src/blackclue"),
+      package_dir={"": "src/blackclue"},
       entry_points={
-          "console_scripts": ["blackclue=blackclue.blackclue:dump"]
+          "console_scripts": ["blackclue=blackclue:dump_cli"]
       },
       install_requires=deps,
       # test_suite="tests",

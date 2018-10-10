@@ -25,7 +25,7 @@ emb_file_def = {
 }
 
 
-def dump(file, dump_embedded, dump_raw_blocks, extended_scan, verbose):
+def dump(file, dump_embedded=False, dump_raw_blocks=False, extended_scan=False, verbose=False):
     """ Extract GPS and Acceleration data from BlackVue MP4 recordings.
 
     BlackVue extracts data embedded in the MP4 recordings of a BlackVue Dashcam.
@@ -112,18 +112,20 @@ def dump(file, dump_embedded, dump_raw_blocks, extended_scan, verbose):
                     raise
 
 
+@click.command(context_settings=dict(help_option_names=['-h', '--help']))
+@click.option('-c', '--dump-embedded', is_flag=True,
+              help='Dump complete embedded data.')
+@click.option('-r', '--dump-raw-blocks', is_flag=True,
+              help='Dump raw blocks from embedded data.')
+@click.option('-x', '--extended-scan', is_flag=True,
+              help='Do not stop scanning file after processing the embedded data.')
+@click.option('-v', '--verbose', is_flag=True,
+              help='Print some additional information.')
+@click.argument('FILE', nargs=-1, metavar='filelist')
+@clickutil.call(dump)
+def dump_cli():
+    pass
+
+
 if __name__ == '__main__':
-    @click.command(context_settings=dict(help_option_names=['-h', '--help']))
-    @click.option('-c', '--dump-embedded', is_flag=True,
-                  help='Dump complete embedded data.')
-    @click.option('-r', '--dump-raw-blocks', is_flag=True,
-                  help='Dump raw blocks from embedded data.')
-    @click.option('-x', '--extended-scan', is_flag=True,
-                  help='Do not stop scanning file after processing the embedded data.')
-    @click.option('-v', '--verbose', is_flag=True,
-                  help='Print some additional information.')
-    @click.argument('FILE', nargs=-1, metavar='filelist')
-    @clickutil.call(dump)
-    def _dump():
-        pass
-    _dump()
+    dump_cli()
