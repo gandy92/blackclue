@@ -37,5 +37,12 @@ Options:
 
 Leave bug reports and feature requests on https://github.com/gandy92/blackclue.
 
+# History
+## 1.1.0
+First release on PyPi. Thanks to @bartbroere, BlackClue can now also be used as a package.
+
+## 1.0.0
+First release on GitHub
+
 # Todo
 Make it available on [PyPI](https://pypi.org/) to be installed via pip.

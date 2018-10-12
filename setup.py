@@ -26,18 +26,18 @@ deps = [
     "construct",
 ]
 
-srcdir = join(dirname(abspath(__file__)), "src/")
+srcdir = join(dirname(abspath(__file__)), "blackclue/")
 sys_path.insert(0, srcdir)
 
 setup(name="blackclue",
-      version="1.0.0",
+      version="1.1.0",
       description="A Python Tool to extract GPS and Acceleration data from BlackVue MP4 recordings.",
       url="https://github.com/gandy92/blackclue",
       author="gandy92",
       author_email="gandy92@users.noreply.github.com",
       license="Apache 2.0",
-      packages=find_packages("src/blackclue"),
-      package_dir={"": "src/blackclue"},
+      packages=find_packages("blackclue"),
+      package_dir={"": "blackclue"},
       entry_points={
           "console_scripts": ["blackclue=blackclue:dump_cli"]
       },
