@@ -29,12 +29,18 @@ deps = [
 srcdir = join(dirname(abspath(__file__)), "blackclue/")
 sys_path.insert(0, srcdir)
 
-setup(name="blackclue",
-      version="1.1.0",
-      description="A Python Tool to extract GPS and Acceleration data from BlackVue MP4 recordings.",
+this_directory = abspath(dirname(__file__))
+with open(join(this_directory, 'README.md'), encoding='utf-8') as f:
+    long_description = f.read()
+
+setup(name="BlackClue",
+      version="1.1.1",
+      description="A tool to extract GPS and acceleration data from BlackVue MP4 recordings.",
+      long_description=long_description,
+      long_description_content_type="text/markdown",
       url="https://github.com/gandy92/blackclue",
-      author="gandy92",
-      author_email="gandy92@users.noreply.github.com",
+      author="Andy Thaller",
+      author_email="gandy92@googlemail.com",
       license="Apache 2.0",
       packages=find_packages("blackclue"),
       package_dir={"": "blackclue"},
@@ -42,14 +48,10 @@ setup(name="blackclue",
           "console_scripts": ["blackclue=blackclue:dump_cli"]
       },
       install_requires=deps,
-      # test_suite="tests",
-      classifiers=["Development Status :: 4 - Beta",
+      classifiers=["Development Status :: 5 - Production/Stable",
                    "Environment :: Console",
                    "Operating System :: POSIX",
-                   "Programming Language :: Python :: 3.3",
-                   "Programming Language :: Python :: 3.4",
-                   "Programming Language :: Python :: 3.5",
-                   "Programming Language :: Python :: 3.6",
+                   "Programming Language :: Python :: 3",
                    "Topic :: Multimedia :: Sound/Audio",
                    "Topic :: Multimedia :: Video",
                    "Topic :: Utilities"])
