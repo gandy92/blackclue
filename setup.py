@@ -41,6 +41,7 @@ setup(name="blackclue",
       entry_points={
           "console_scripts": ["blackclue=blackclue:dump_cli"]
       },
+      py_modules=["blackclue"],
       install_requires=deps,
       # test_suite="tests",
       classifiers=["Development Status :: 4 - Beta",
