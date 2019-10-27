@@ -23,7 +23,6 @@ deps = [
     "pymp4",
     "click",
     "clickutil",
-    "construct",
 ]
 
 srcdir = join(dirname(abspath(__file__)), "blackclue/")
