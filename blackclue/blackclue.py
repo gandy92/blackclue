@@ -11,7 +11,7 @@ import clickutil
 import construct
 from pymp4.parser import Box
 
-log = logging.getLogger(__name__)
+logger = logging.getLogger(__name__)
 construct.setglobalfullprinting(True)
 
 # data offset, has_length, termination

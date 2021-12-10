@@ -41,7 +41,8 @@ Leave bug reports and feature requests on https://github.com/gandy92/blackclue.
 Fix problems with PyPI release.
 
 ## 1.1.0
-First release on PyPI. Thanks to @bartbroere, BlackClue can now also be used as a package.
+First release on PyPI. Thanks to [Bart Broere](https://github.com/bartbroere), 
+BlackClue can now also be used as a package.
 
 ## 1.0.0
 First release on GitHub
